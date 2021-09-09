@@ -1,1 +1,0 @@
-"isDefault":true,"name":"식당"

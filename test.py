@@ -1,24 +1,16 @@
-import json
+import random
+import pandas as pd
 
-menu = open("C:/Users/masse/OneDrive - 한양대학교/바탕 화면/123.txt.", 'r', encoding='UTF8')
-data = menu.read()
+df = pd.read_excel('./menu.xlsx')
 
-target = '''"name":'''
-index = -1
-while True:
-    index = data.find(target, index + 1)
-    if index == -1:
-        break
-    flag = 1
-    dp = 0
-    name = ''
-    new = ''
-    while True:
-        new = data[index + 6 + flag]
-        name += new
-        flag += 1
-        if new == '''"''':
-            dp += 1
-        if dp == 2:
-            print(name)
-            break
+menu = list(df['menu'])
+tag = list(df['tag'])
+rate = list(df['rate'])
+dic = {}
+filtered = []
+
+for i in range(0, len(menu)):
+    if "카페" not in tag[i] and "커피" not in tag[i] and "베이커리" not in tag[i]:
+        filtered.append(menu[i])
+
+print(random.choice(filtered))
