@@ -14,4 +14,5 @@ for i in range(0, len(menu)):
             and "브런치" not in tag[i] and "포장마차" not in tag[i]:
         filtered.append(menu[i])
 
-print(random.choice(filtered))
+for i in range(0, 10):
+    print(random.choice(filtered))
