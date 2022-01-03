@@ -5,9 +5,8 @@ df = pd.read_excel('./menu.xlsx')
 
 menu = list(df['menu'])
 tag = list(df['tag'])
-rate = list(df['rate'])
+# rate = list(df['rate']) 미구현
 ban = {"카페", "커피", "베이커리", "디저트", "브런치", "포장마차"}
-dic = {}
 filtered = []
 
 for i in range(0, len(menu)):
